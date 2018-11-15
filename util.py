@@ -23,6 +23,11 @@ def get_test_data(filename = "test.csv"):
             features["x"].append([row])
         features["x"] = np.array(features["x"])
         print("Shape X:", features["x"].shape)
+#make functions to build the csv to make submissions
+def make_submission(result_dict, filename="submission.csv"):
+    with open(filename, 'w') as submission_file:
+        for row in result_dict:
+            submission_file.write(row)
 
 
 if __name__ == '__main__':
